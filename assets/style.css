@@ -24,6 +24,10 @@ body{
     font-size: 2.5rem;
     margin: 0 0 1rem 0;
 }
+h3 a{
+	color: #485e74;
+	text-decoration: none;
+}
 
 ul{
 	list-style: none;
@@ -96,6 +100,20 @@ ul{
 	color: #fff;
 	outline:0;
 	transition: background-color 0.5 s ease-out;
+}
+
+.submit{
+	cursor: pointer;
+}
+#submitButton{
+	background: #92bde7;
+	color: #485e74;
+	border: 0;
+	text-transform: uppercase;
+	padding: 1em;
+	width: 100%;
+	margin-top: 1em;
+	cursor: pointer;
 }
 
 
