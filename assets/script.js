@@ -75,6 +75,7 @@ function validateForm() {
   for (let i = 0; i < inputs.length; i++) {
     if (inputs[i].value === '' || inputs[i].value === null) {
       document.getElementById('submitButton').style.cursor = 'not-allowed';// Disable tombol submit jika ada setidaknya satu input yang belum diisi
+      document.getElementById('submitButton').setAttribute("data-tooltip", "all Input Required");
       break;
     }else{
         document.getElementById('submitButton').style.cursor = 'pointer';
