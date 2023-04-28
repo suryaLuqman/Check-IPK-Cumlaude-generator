@@ -32,7 +32,7 @@ function addForm() {
             // Buat dua input dan dua label untuk setiap input
             for (let j = 0; j < 2; j++) {
                 const inputLabel = document.createElement('label');
-                const labelNames = [`IPK Semester ${i+1} `, `SKS Semester ${i+1}`];
+                const labelNames = [`IPK Semester ${i+1} `, `Total SKS Sem. ${i+1}`];
                 inputLabel.for = `input-${i}-${j}`;
                 inputLabel.textContent = labelNames[j];
     
@@ -69,17 +69,22 @@ function addForm() {
 
 // Fungsi untuk memvalidasi form dan menentukan apakah tombol submit harus di-disable
 function validateForm() {
-  const inputs = formContainer.querySelectorAll('input[type=text]');
+  const inputs = formContainer.getElementsByClassName('inputValue');
   let allInputsFilled = true;
 
   for (let i = 0; i < inputs.length; i++) {
-    if (inputs[i].value === '') {
-      allInputsFilled = false;
+    if (inputs[i].value === '' || inputs[i].value === null) {
+      document.getElementById('submitButton').style.cursor = 'not-allowed';// Disable tombol submit jika ada setidaknya satu input yang belum diisi
       break;
+    }else{
+        document.getElementById('submitButton').style.cursor = 'pointer';
+        document.getElementById('submitButton').removeAttribute("data-tooltip");
+
     }
+    
   }
 
-  submitButton.disabled = !allInputsFilled; // Disable tombol submit jika ada setidaknya satu input yang belum diisi
+
 }
 
 addRemoveButton.addEventListener('click', function() {
