@@ -67,6 +67,9 @@ function addForm() {
   validateForm(); // Validasi form setelah menambahkan input form dan label baru
 }
 
+
+
+
 // Fungsi untuk memvalidasi form dan menentukan apakah tombol submit harus di-disable
 function validateForm() {
   const inputs = formContainer.getElementsByClassName('inputValue');
@@ -86,6 +89,26 @@ function validateForm() {
   }
 
 
+}
+
+
+const countTotal = {
+  ipkCurrently  (ipk, sks) {
+    let totalIP = 0;
+    let sksTotal = 0;
+    for (let i = 0; i < ipk.length; i++) {
+        totalIP += ipk[i] ;
+        sksTotal += sks[i];
+    }
+    return {
+        totalIP: totalIP/inputCount, 
+        sksTotal: sksTotal
+        // cara akses
+        //  let total = new countTotal.ipkCurrently(ipk, sks);
+        //  total.totalIP
+        //  total.sksTotal
+    };  
+  },
 }
 
 addRemoveButton.addEventListener('click', function() {
